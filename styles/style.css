@@ -13,6 +13,11 @@ border: 2px solid red;
 
 }  */
 
+#profile-pic {
+  border-radius: 50%;
+  width: 1.5rem;
+}
+
 header {
   border-radius: 1rem 1rem 0 0;
   background-image: linear-gradient(gray, black);

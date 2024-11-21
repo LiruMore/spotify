@@ -55,6 +55,7 @@ function timestamp_from_secs(...$seconds)
                 <b> Alone </b>
             </p>
             <p style="font-size:.8rem;">
+                <img class="me-2" id="profile-pic" src="images/profile.png" alt="Daniel and Roberto selfie">
                 <b> Liru More</b>
                 <span class="highlight">
                     <?php
@@ -106,11 +107,10 @@ function timestamp_from_secs(...$seconds)
     <div class="collum discription">
 
     </div>
+    <!--media controls-->
+    <footer>
+
+    </footer>
 </body>
-
-<!--media controls-->
-<footer>
-
-</footer>
 
 </html>
