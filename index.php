@@ -21,8 +21,11 @@
     include 'songs.php';
     ?>
 
-    <header class="D gradient">
+    <div class="Profile">s
+        <img src="images/Profile.jpg" alt="Roberto and Danial taking a picture on a mirror">
+    </div>
 
+    <header class="D gradient">
         <img class="D album" src="images/Playlist_pic.png" alt="">
 
         <div>

@@ -14,10 +14,14 @@ border: 2px solid red;
 }  */
 
 header {
+  border-radius: 1rem 1rem 0 0;
   background-image: linear-gradient(gray, black);
   background-repeat: no-repeat;
 }
 
+.Profile {
+  display: flex;
+}
 .gradient {
   display: flex;
   align-items: end;
