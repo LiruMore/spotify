@@ -13,11 +13,13 @@
     <link rel="stylesheet" href="styles/style.css" />
 </head>
 
-
-
 <body>
-    <header class="D gradient">
+    <!-- ❥Songs -->
+    <div class="Profile">
+        <img src="images/Profile.jpg" alt="Roberto and Danial taking a picture on a mirror">
+    </div>
 
+    <header class="D gradient">
         <img class="D album" src="images/Playlist_pic.png" alt="">
 
         <div>
