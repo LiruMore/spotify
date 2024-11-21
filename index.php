@@ -16,11 +16,6 @@
 
 
 <body>
-    <!-- ❥Songs -->
-    <?php
-    include 'songs.php';
-    ?>
-
     <header class="D gradient">
 
         <img class="D album" src="images/Playlist_pic.png" alt="">
@@ -39,6 +34,32 @@
         </div>
     </header>
 
+    <main class="container-fluid">
+        <!-- ❥Songs -->
+        <?php
+        include 'songs.php';
+
+        for ($i = 0; $i < count($songs); $i++) {
+            $song = $songs[$i];
+            $song_number = $i + 1;
+            $song_title = $song['title'];
+            $song_cover = $song['cover'];
+            $song_artist = $song['artist'];
+            $song_album = $song['album'];
+            $song_duration = $song['duration'];
+            echo "<div class=\"row text-center text-white mt-3 p-2 border-bottom\">";
+            echo "  <p class=\"col\">$song_number</p>";
+            echo "  <img class=\"col-1\" src=\"$song_cover\">";
+            echo "  <p class=\"col\">$song_title</p>";
+            echo "  <p class=\"col\">$song_artist</p>";
+            echo "  <p class=\"col\">$song_album</p>";
+            echo "  <p class=\"col\">$song_duration</p>";
+            echo "</div>";
+        }
+
+        ?>
+    </main>
+
     <script
         src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
@@ -51,7 +72,6 @@
 
 <!--media controls-->
 <footer>
-
 
 </footer>
 
