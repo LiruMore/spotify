@@ -1,6 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<?php
+include 'songs.php';
+
+function duration_to_secs($time_stamp)
+{
+    $ts_components = explode(":", $time_stamp);
+    $minutes = intval($ts_components[0]);
+    $seconds = intval($ts_components[1]);
+    $seconds_in_a_minute = 60;
+
+    return ($minutes * $seconds_in_a_minute) + $seconds;
+}
+
+function timestamp_from_secs(...$seconds)
+{
+    $total_secs = array_sum($seconds);
+    $seconds_in_an_hour = 60 * 60;
+    $seconds_in_a_minute = 60;
+
+    $hours = floor($total_secs / $seconds_in_an_hour);
+    $remaining_seconds = $total_secs % $seconds_in_an_hour;
+    $minutes = floor($remaining_seconds / $seconds_in_a_minute);
+
+    $hour_unit = $hours <= 1 ? "hr" : "hrs";
+    $timestamp = "$hours $hour_unit $minutes mins";
+
+    return $timestamp;
+}
+?>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,11 +44,6 @@
 </head>
 
 <body>
-    <!-- ❥Songs -->
-    <div class="Profile">
-        <img src="images/Profile.jpg" alt="Roberto and Danial taking a picture on a mirror">
-    </div>
-
     <header class="D gradient">
         <img class="D album" src="images/Playlist_pic.png" alt="">
 
@@ -30,8 +55,21 @@
                 <b> Alone </b>
             </p>
             <p style="font-size:.8rem;">
-                <b> Liru More</b> <span class="highlight">
-                    • 2024 • ? songs, ? hrs ? mins</span>
+                <b> Liru More</b>
+                <span class="highlight">
+                    <?php
+                    $num_songs = count($songs);
+                    $songs_unit = $num_songs <= 1 ? "song" : "songs";
+
+                    $song_duration_secs = array_map(function ($song) {
+                        return duration_to_secs($song['duration']);
+                    }, $songs);
+
+                    $timestamp = timestamp_from_secs(...$song_duration_secs);
+
+                    echo "• 2024 • $num_songs $songs_unit • $timestamp"
+                    ?>
+                </span>
             </p>
         </div>
     </header>
@@ -39,8 +77,6 @@
     <main class="container-fluid">
         <!-- ❥Songs -->
         <?php
-        include 'songs.php';
-
         for ($i = 0; $i < count($songs); $i++) {
             $song = $songs[$i];
             $song_number = $i + 1;
