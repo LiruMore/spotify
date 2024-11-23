@@ -56,7 +56,7 @@ function timestamp_from_secs(...$seconds)
             </p>
             <p style="font-size:.8rem;">
                 <img class="me-2" id="profile-pic" src="images/profile.png" alt="Daniel and Roberto selfie">
-                <b> Liru More</b>
+                <b> Liru More, Galaxy, Leo</b>
                 <span class="highlight">
                     <?php
                     $num_songs = count($songs);
