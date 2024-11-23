@@ -30,6 +30,9 @@ function timestamp_from_secs(...$seconds)
     return $timestamp;
 }
 ?>
+<div class="searchbar">
+    <img src="images/Searchbar.png" alt="I was out of bruh">
+</div>
 
 <head>
     <meta charset="UTF-8">
