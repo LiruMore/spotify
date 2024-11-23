@@ -44,3 +44,13 @@ header {
 .highlight {
   color: rgb(166, 166, 166);
 }
+
+.searchbar img {
+  width: 100vw;
+  object-fit: contain;
+  margin: 0.5rem 0rem;
+}
+
+.searchbar img:hover {
+  cursor: pointer;
+}
